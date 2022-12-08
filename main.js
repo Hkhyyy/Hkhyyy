@@ -63,9 +63,10 @@ const doorTest = () =>{
     })
 }
 
-const devTool = () =>{
-    const win = new BrowserWindow()
-    return win.webContents.openDevTools()
+const seriralPortlist = () =>{
+    SerialPort.list().then(ports => {
+        console.log((ports))
+    })
 }
 
 const gotTheLock = app.requestSingleInstanceLock();
@@ -85,7 +86,7 @@ const trayFc = () =>{
     const myMenu = Menu.buildFromTemplate([
         {label: `ver(${packeage.version})`, enabled:false},
         {label: '테스트', type: 'normal', click: () => {doorTest()}},
-        {label: '설정', type: 'normal', submenu:[], click: () =>{}},
+        {label: '설정', type: 'normal', submenu:[], click: () =>{seriralPortlist()}},
         {label: '개발자도구', type: 'normal', click: () => {createWindow()}},
         {label: '종료', type: 'normal', click: ()=> {
             app.
