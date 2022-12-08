@@ -40,6 +40,7 @@ const serialFc = () => {
         serial.write(open)
         const kk = await asyncFc()
         res.send(kk)
+        // aasdasd
         serial.write(close)
     });
     ex.listen(3000, () => {
