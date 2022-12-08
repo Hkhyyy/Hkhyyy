@@ -1,0 +1,57 @@
+{
+  "name": "untitled",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "deploy:osx": "electron-builder --mac",
+    "deploy:win": "npm run deploy:win32 && npm run deploy:win64",
+    "deploy:win32": "electron-builder --win nsis:ia32",
+    "deploy:win64": "electron-builder --win nsis:x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "serialport": "^10.5.0",
+    "xcode": "^3.0.1"
+  },
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "productName": "GR_Agent",
+    "appId": "GR.electron",
+    "asar": true,
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "build/icons/icon.icns"
+    },
+    "dmg": {
+      "title": "GR",
+      "icon": "build/icons/icon.icns"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": false,
+      "installerIcon": "resources/windows/setup-icon.ico"
+    },
+    "directories": {
+      "buildResources": "./build/",
+      "output": "./dist/"
+    }
+  }
+}
