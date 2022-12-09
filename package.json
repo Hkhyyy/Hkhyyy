@@ -1,58 +1,31 @@
 {
-  "name": "untitled",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "name": "electron-serialport",
+  "version": "1.0.2",
+  "description": "A minimal Electron application with node serialport",
+  "main": "final.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "deploy:osx": "electron-builder --mac",
-    "deploy:win": "npm run deploy:win32 && npm run deploy:win64",
-    "deploy:win32": "electron-builder --win nsis:ia32",
-    "deploy:win64": "electron-builder --win nsis:x64"
+    "start": "electron ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
   "dependencies": {
     "cors": "^2.8.5",
+    "electron-custom-dialog": "^1.0.0",
     "express": "^4.18.2",
     "serialport": "^10.5.0",
-    "xcode": "^3.0.1"
+    "socket.io": "^4.5.4",
+    "soket.io": "^0.0.1-security",
+    "tableify": "^1.1.1"
   },
   "devDependencies": {
     "electron": "^22.0.0",
     "electron-builder": "^23.6.0"
-  },
-  "build": {
-    "productName": "GR_Agent",
-    "appId": "GR.electron",
-    "asar": true,
-    "mac": {
-      "target": [
-        "default"
-      ],
-      "icon": "build/icons/icon.icns"
-    },
-    "dmg": {
-      "title": "GR",
-      "icon": "build/icons/icon.icns"
-    },
-    "win": {
-      "target": [
-        "nsis"
-      ],
-      "icon": "build/icons/icon.ico"
-    },
-    "nsis": {
-      "oneClick": true,
-      "allowToChangeInstallationDirectory": false,
-      "createDesktopShortcut": false,
-      "installerIcon": "resources/windows/setup-icon.ico"
-    },
-    "directories": {
-      "buildResources": "./build/",
-      "output": "./dist/"
-    }
   }
 }
